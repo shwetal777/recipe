@@ -1,0 +1,23 @@
+# By default the LoginView will try to open a
+# template name 'registration/login.html' and
+# send a login form with it.
+
+# create a template at that location
+{% extends 'base.html' %}
+
+{% block title %}
+Login |
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="narrow-form">
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Login</button>
+        </form>
+    </div>
+</main>
+{% endblock content %}
